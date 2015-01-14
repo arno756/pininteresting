@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3' --> not compatible with Heroku
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,3 +38,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+
+group :development, :test do 
+	gem 'sqlite3'
+end
+# It says that this SQLlite would be only used for Dev and Test / Do if the ruby to open up a block and end to close a block
+# If sqlite3 is not in this group then Heroku would complain
+
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
+# This is the group for production using the Postgres Database
+# rails_12factor: This gem enables serving assets in production and setting your
+# logger to standard out, both of which are required to run a Rails 4 application on a twelve-factor provider. The gem also makes the appropriate changes for Rails 3 apps.
