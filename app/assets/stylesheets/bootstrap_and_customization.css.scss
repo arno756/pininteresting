@@ -1,0 +1,23 @@
+// http://getbootstrap.com/customize/
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$body-bg:    #ecf0f1;
+$font-family-sans-serif:   'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-default-bg:   white;
+$navbar-default-brand-color:   #c0392b;
+$navbar-height:   45px;
+$navbar-inverse-link-color:   white;
+$brand-primary:  #c0392b;
+$jumbotron-bg:   white;
+
+@import 'bootstrap';
+
+.center {
+	text-align: center;
+}
+// create a class to center the position of the text
+
+.navbar-brand {
+	font-weight: bold;
+}
+// create a class to overwritte the CSS and make the brand bold
