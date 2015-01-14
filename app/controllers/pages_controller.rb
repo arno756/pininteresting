@@ -3,4 +3,6 @@ class PagesController < ApplicationController
   end
   def About
   end
+  def Project
+  end
 end
