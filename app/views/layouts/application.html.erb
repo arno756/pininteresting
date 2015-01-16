@@ -12,7 +12,10 @@
 
 	<%= render "layouts/header" %>
 	<div class="container">
-		<%= yield %>
+		<% flash.each do |name, msg| %> <!-- Flash messages are the messages on Websites that say "Thanks for log in" or "Thanks for signing up" and then disappear when refreshed. We say that for each Flash you have to do something and name the variables (name and message), there is also no equal sign because if we don't want something to show up on a page we don't need the equal sign -->
+      <%= content_tag(:div,msg, class: "alert alert-info") %> <!-- for each flash message, we create a content tag that is a div, has a message and has a class that is alert with some dynamic ruby (alert-#{name}) -->
+    <% end %>
+    <%= yield %>
 	</div>
 
 </body>
