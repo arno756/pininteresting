@@ -19,6 +19,7 @@
         <li><%= link_to "About Us", about_path, class: "navbar-brand" %></li>
         <li><%= link_to "Project", project_path, class: "navbar-brand" %></li>
         <% if user_signed_in? %>
+        <li><%= link_to "Account Settings",edit_user_registration_path, class: "navbar-brand" %></li>  
         <li><%= link_to "Log Out", destroy_user_session_path, class: "navbar-brand", method: :delete %></li> <!-- Create a button with the class btn -->
           <% else %>
             <li><%= link_to "Log In", new_user_session_path, class: "navbar-brand" %></li> <!-- Create a button with the class btn -->
